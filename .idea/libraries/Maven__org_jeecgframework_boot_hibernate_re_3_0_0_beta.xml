@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.jeecgframework.boot:hibernate-re:3.0.0-beta">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/apache-maven-3.8.3/repository/org/jeecgframework/boot/hibernate-re/3.0.0-beta/hibernate-re-3.0.0-beta.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Downloads/apache-maven-3.8.3/repository/org/jeecgframework/boot/hibernate-re/3.0.0-beta/hibernate-re-3.0.0-beta-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Downloads/apache-maven-3.8.3/repository/org/jeecgframework/boot/hibernate-re/3.0.0-beta/hibernate-re-3.0.0-beta-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

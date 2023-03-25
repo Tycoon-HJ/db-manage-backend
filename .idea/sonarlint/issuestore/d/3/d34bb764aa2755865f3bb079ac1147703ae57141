@@ -1,0 +1,47 @@
+
+t
+java:S2293K"YReplace the type specification in this constructor call with the diamond operator ("<>").(ž¡åÒøÿÿÿÿ
+t
+java:S2293S"YReplace the type specification in this constructor call with the diamond operator ("<>").(ž¡åÒøÿÿÿÿ
+t
+java:S2293\"YReplace the type specification in this constructor call with the diamond operator ("<>").(ž¡åÒøÿÿÿÿ
+t
+java:S2293d"YReplace the type specification in this constructor call with the diamond operator ("<>").(”ü¾ûþÿÿÿÿ
+t
+java:S2293k"YReplace the type specification in this constructor call with the diamond operator ("<>").(”ü¾ûþÿÿÿÿ
+t
+java:S2293s"YReplace the type specification in this constructor call with the diamond operator ("<>").(”ü¾ûþÿÿÿÿ
+t
+java:S2293{"YReplace the type specification in this constructor call with the diamond operator ("<>").(”ü¾ûþÿÿÿÿ
+u
+java:S2293„"YReplace the type specification in this constructor call with the diamond operator ("<>").(”ü¾ûþÿÿÿÿ
+u
+java:S2293‘"YReplace the type specification in this constructor call with the diamond operator ("<>").(ž¡åÒøÿÿÿÿ
+0
+java:S1700-"Rename field "result"(‡Ôãõüÿÿÿÿ
+`
+java:S1845c"JRename method "OK" to prevent any misunderstanding/clash with method "ok".(Óé±¸
+e
+java:S1845j"JRename method "OK" to prevent any misunderstanding/clash with method "ok".(åÿ‘‚øÿÿÿÿ
+e
+java:S1845r"JRename method "OK" to prevent any misunderstanding/clash with method "ok".(€ÓÓ¦ÿÿÿÿÿ
+`
+java:S1845z"JRename method "OK" to prevent any misunderstanding/clash with method "ok".(åø¼©
+C
+java:S1948-"(Make "result" transient or serializable.(‡Ôãõüÿÿÿÿ
+P
+java:S1133J"5Do not forget to remove this deprecated code someday.(ˆÔä´ýÿÿÿÿ
+C
+java:S1123J"(Add the missing @deprecated Javadoc tag.(ˆÔä´ýÿÿÿÿ
+K
+java:S1133R"5Do not forget to remove this deprecated code someday.(Ò‰îÿ
+>
+java:S1123R"(Add the missing @deprecated Javadoc tag.(Ò‰îÿ
+P
+java:S1133["5Do not forget to remove this deprecated code someday.(Ü»ºíøÿÿÿÿ
+C
+java:S1123["(Add the missing @deprecated Javadoc tag.(Ü»ºíøÿÿÿÿ
+c	java:S100c"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óé±¸
+h	java:S100j"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÿ‘‚øÿÿÿÿ
+h	java:S100r"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€ÓÓ¦ÿÿÿÿÿ
+c	java:S100z"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åø¼©

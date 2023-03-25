@@ -1,0 +1,49 @@
+
+o
+java:S2293F"YReplace the type specification in this constructor call with the diamond operator ("<>").(¤Ž¤ž
+A
+java:S1452A"&Remove usage of generic wildcard type.(ñ¯ÿ­øÿÿÿÿ
+<
+java:S1452T"&Remove usage of generic wildcard type.(à™Ùí
+A
+java:S1452b"&Remove usage of generic wildcard type.(ÔÈÇùÿÿÿÿ
+<
+java:S1452p"&Remove usage of generic wildcard type.(“Ã„¥
+<
+java:S1452~"&Remove usage of generic wildcard type.(šÍÐÿ
+B
+java:S1452Œ"&Remove usage of generic wildcard type.(†Æá°ÿÿÿÿÿ
+=
+java:S1452§"&Remove usage of generic wildcard type.(ÇÊ§®
+a
+java:S4488¦"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(–®üÎ
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+E
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òþÿÿÿÿ
+S
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ
+K
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ
+W
+java:S1128"ARemove this unused import 'java.io.UnsupportedEncodingException'.(Ãµ…“
+F
+java:S1128	"0Remove this unused import 'java.net.URLDecoder'.(œ®ô„
+V
+java:S1128"@Remove this unused import 'org.jeecg.common.util.oConvertUtils'.(ŠŒ¸¸
+_
+java:S1128"IRemove this unused import 'org.jeecgframework.poi.excel.ExcelImportUtil'.(¯¯´
+m
+java:S1128"RRemove this unused import 'org.jeecgframework.poi.excel.def.NormalExcelConstants'.(ÕŽŸßùÿÿÿÿ
+c
+java:S1128"MRemove this unused import 'org.jeecgframework.poi.excel.entity.ExportParams'.(³¦üõ
+h
+java:S1128"MRemove this unused import 'org.jeecgframework.poi.excel.entity.ImportParams'.(·Íããþÿÿÿÿ
+n
+java:S1128"SRemove this unused import 'org.jeecgframework.poi.excel.view.JeecgEntityExcelView'.(Ì¤úÞøÿÿÿÿ
+g
+java:S1128"LRemove this unused import 'org.springframework.web.multipart.MultipartFile'.(ôŸœžÿÿÿÿÿ
+p
+java:S1128 "ZRemove this unused import 'org.springframework.web.multipart.MultipartHttpServletRequest'.(”¨Ö¿
+K
+java:S1128""6Remove this unused import 'com.alibaba.fastjson.JSON'.(Ö¢å$

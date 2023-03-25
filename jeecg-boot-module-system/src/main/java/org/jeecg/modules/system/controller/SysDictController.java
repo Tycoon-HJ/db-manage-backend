@@ -8,7 +8,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.constant.CacheConstant;
 import org.jeecg.common.constant.CommonConstant;
@@ -89,7 +88,6 @@ public class SysDictController {
 	 * @param req
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/treeList", method = RequestMethod.GET)
 	public Result<List<SysDictTree>> treeList(SysDict sysDict,@RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
 									  @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,HttpServletRequest req) {
@@ -118,9 +116,7 @@ public class SysDictController {
 	 */
 	@RequestMapping(value = "/queryAllDictItems", method = RequestMethod.GET)
 	public Result<?> queryAllDictItems(HttpServletRequest request) {
-		Map<String, List<DictModel>> res = new HashMap<String, List<DictModel>>();
-		res = sysDictService.queryAllDictItems();
-		return Result.ok(res);
+		return Result.ok(sysDictService.queryAllDictItems());
 	}
 
 	/**
@@ -131,8 +127,8 @@ public class SysDictController {
 	@RequestMapping(value = "/getDictText/{dictCode}/{key}", method = RequestMethod.GET)
 	public Result<String> getDictText(@PathVariable("dictCode") String dictCode, @PathVariable("key") String key) {
 		log.info(" dictCode : "+ dictCode);
-		Result<String> result = new Result<String>();
-		String text = null;
+		Result<String> result = new Result<>();
+		String text;
 		try {
 			text = sysDictService.queryDictTextByKey(dictCode, key);
 			 result.setSuccess(true);
@@ -152,7 +148,7 @@ public class SysDictController {
 	 * @param dictCode 表名,文本字段,code字段  | 举例：sys_user,realname,id
 	 * @return
 	 */
-	@RequestMapping(value = "/getDictItems/{dictCode}", method = RequestMethod.GET)
+	@GetMapping(value = "/getDictItems/{dictCode}")
 	public Result<List<DictModel>> getDictItems(@PathVariable String dictCode, @RequestParam(value = "sign",required = false) String sign,HttpServletRequest request) {
 		log.info(" dictCode : "+ dictCode);
 		Result<List<DictModel>> result = new Result<List<DictModel>>();

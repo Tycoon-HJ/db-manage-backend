@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="2048" />
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="untitled" />
+        <module name="jeecg-boot-starter-job" />
+        <module name="database-management" />
+        <module name="jeecg-cloud-gateway" />
+        <module name="jeecg-boot-starter-rabbitmq" />
+        <module name="jeecg-system-cloud-api" />
+        <module name="jeecg-boot-starter-cloud" />
+        <module name="jeecg-cloud-monitor" />
+        <module name="jeecg-boot-base-core" />
+        <module name="jeecg-boot-starter-lock" />
+        <module name="jeecg-boot-module-demo" />
+        <module name="jeecg-cloud-sentinel" />
+        <module name="jeecg-cloud-xxljob" />
+        <module name="jeecg-boot-module-system" />
+        <module name="jeecg-system-local-api" />
+        <module name="jeecg-cloud-system-start" />
+        <module name="jeecg-boot-base-tools" />
+        <module name="jeecg-cloud-nacos" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="database-management" target="1.8" />
+      <module name="jeecg" target="1.8" />
+      <module name="jeecg-boot-base" target="1.8" />
+      <module name="jeecg-boot-base-api" target="1.8" />
+      <module name="jeecg-boot-base-core" target="1.8" />
+      <module name="jeecg-boot-base-tools" target="1.8" />
+      <module name="jeecg-boot-module-demo" target="1.8" />
+      <module name="jeecg-boot-module-system" target="1.8" />
+      <module name="jeecg-boot-starter" target="1.8" />
+      <module name="jeecg-boot-starter-cloud" target="1.8" />
+      <module name="jeecg-boot-starter-job" target="1.8" />
+      <module name="jeecg-boot-starter-lock" target="1.8" />
+      <module name="jeecg-boot-starter-rabbitmq" target="1.8" />
+      <module name="jeecg-cloud-gateway" target="1.8" />
+      <module name="jeecg-cloud-module" target="1.8" />
+      <module name="jeecg-cloud-monitor" target="1.8" />
+      <module name="jeecg-cloud-nacos" target="1.8" />
+      <module name="jeecg-cloud-sentinel" target="1.8" />
+      <module name="jeecg-cloud-system-start" target="1.8" />
+      <module name="jeecg-cloud-xxljob" target="1.8" />
+      <module name="jeecg-system-cloud-api" target="1.8" />
+      <module name="jeecg-system-local-api" target="1.8" />
+      <module name="untitled" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="database-management" options="-parameters" />
+      <module name="jeecg" options="-parameters" />
+      <module name="jeecg-boot-base" options="-parameters" />
+      <module name="jeecg-boot-base-api" options="-parameters" />
+      <module name="jeecg-boot-base-core" options="-parameters" />
+      <module name="jeecg-boot-base-tools" options="-parameters" />
+      <module name="jeecg-boot-module-demo" options="-parameters" />
+      <module name="jeecg-boot-module-system" options="-parameters" />
+      <module name="jeecg-boot-starter" options="-parameters" />
+      <module name="jeecg-boot-starter-cloud" options="-parameters" />
+      <module name="jeecg-boot-starter-job" options="-parameters" />
+      <module name="jeecg-boot-starter-lock" options="-parameters" />
+      <module name="jeecg-boot-starter-rabbitmq" options="-parameters" />
+      <module name="jeecg-cloud-gateway" options="-parameters" />
+      <module name="jeecg-cloud-module" options="-parameters" />
+      <module name="jeecg-cloud-monitor" options="-parameters" />
+      <module name="jeecg-cloud-nacos" options="-parameters" />
+      <module name="jeecg-cloud-sentinel" options="-parameters" />
+      <module name="jeecg-cloud-system-start" options="-parameters" />
+      <module name="jeecg-cloud-xxljob" options="-parameters" />
+      <module name="jeecg-system-cloud-api" options="-parameters" />
+      <module name="jeecg-system-local-api" options="-parameters" />
+      <module name="untitled" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -61,7 +61,7 @@
 		<!-- DEMO 示例模块【微服务启动请注释掉】 -->
 		<dependency>
 			<groupId>org.jeecgframework.boot</groupId>
-			<artifactId>jeecg-boot-module-demo</artifactId>
+			<artifactId>database-management</artifactId>
 			<version>3.0</version>
 		</dependency>
 

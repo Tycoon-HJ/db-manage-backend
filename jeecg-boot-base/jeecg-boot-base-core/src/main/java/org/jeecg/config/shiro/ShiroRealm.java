@@ -95,7 +95,7 @@ public class ShiroRealm extends AuthorizingRealm {
             throw new AuthenticationException("token为空!");
         }
         // 校验token有效性
-        LoginUser loginUser = null;
+        LoginUser loginUser;
         try {
             loginUser = this.checkUserTokenIsEffect(token);
         } catch (AuthenticationException e) {

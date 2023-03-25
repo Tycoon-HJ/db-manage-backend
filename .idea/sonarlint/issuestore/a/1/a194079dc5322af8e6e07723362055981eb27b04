@@ -1,0 +1,9 @@
+
+E
+java:S3740n"/Provide the parametrized type for this generic.(³ÒÔÚ
+{
+java:S1488"_Immediately return this expression instead of assigning it to the temporary variable "message".(ÇÎÕûıÿÿÿÿ
+o
+java:S1602´"SRemove useless curly braces around statement and then remove useless return keyword(¤’¸úÿÿÿÿ
+W	java:S125á"<This block of commented-out lines of code should be removed.(»æƒ²ûÿÿÿÿ
+O	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(®¦Ç÷
