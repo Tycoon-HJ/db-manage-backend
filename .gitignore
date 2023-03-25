@@ -3,4 +3,4 @@
 **/*.vuei
 /jeecg-boot-module-system/src/main/resources/jeecg/code-template/
 /jeecg-boot-module-system/src/main/resources/jeecg/code-template-online/
-.idea
+/.idea/
