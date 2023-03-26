@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.util.Arrays;
 
  /**
@@ -65,7 +66,7 @@ public class TbFieldManagerController extends JeecgController<TbFieldManager, IT
 	@AutoLog(value = "字段管理-添加")
 	@ApiOperation(value="字段管理-添加", notes="字段管理-添加")
 	@PostMapping(value = "/add")
-	public Result<?> add(@RequestBody TbFieldManager tbFieldManager) {
+	public Result<?> add(@RequestBody @Valid TbFieldManager tbFieldManager) {
 		tbFieldManagerService.save(tbFieldManager);
 		return Result.OK("添加成功！");
 	}

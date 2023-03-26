@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.hibernate.validator.constraints.Length;
 import org.jeecg.common.aspect.annotation.Dict;
 import org.jeecgframework.poi.excel.annotation.Excel;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -73,5 +74,6 @@ public class TbFieldManager implements Serializable {
 	/**字段长度*/
 	@Excel(name = "字段长度", width = 15)
     @ApiModelProperty(value = "字段长度")
+    @Length(max = 3)
     private String fieldLength;
 }
