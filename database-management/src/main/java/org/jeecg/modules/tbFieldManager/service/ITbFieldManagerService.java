@@ -11,4 +11,11 @@ import org.jeecg.modules.tbFieldManager.entity.TbFieldManager;
  */
 public interface ITbFieldManagerService extends IService<TbFieldManager> {
 
+    /**
+     * 检查字典引向
+     * @param code
+     * @return
+     */
+    boolean checkHaveDictUse(String code);
+
 }
