@@ -319,3 +319,15 @@ third-app:
       # appSecret
       client-secret: ??
       agent-id: ??
+
+dubbo:
+  application:
+    name: db-manage
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20880
+    # 关闭启动检查
+  consumer:
+    check: false

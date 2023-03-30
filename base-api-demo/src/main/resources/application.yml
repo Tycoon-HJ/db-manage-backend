@@ -1,0 +1,10 @@
+server:
+  port: 3333
+dubbo:
+  application:
+    name: base-api
+  registry:
+    address: zookeeper://localhost:2181
+  protocol:
+    name: dubbo
+    port: 20800
