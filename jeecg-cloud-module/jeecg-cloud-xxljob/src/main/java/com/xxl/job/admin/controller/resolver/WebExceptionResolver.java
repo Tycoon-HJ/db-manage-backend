@@ -1,8 +1,8 @@
 package com.xxl.job.admin.controller.resolver;
 
 import com.xxl.job.admin.core.exception.XxlJobException;
-import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.admin.core.util.JacksonUtil;
+import com.xxl.job.core.biz.model.ReturnT;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -34,10 +34,12 @@ public class WebExceptionResolver implements HandlerExceptionResolver {
 
 		// if json
 		boolean isJson = false;
-		HandlerMethod method = (HandlerMethod)handler;
-		ResponseBody responseBody = method.getMethodAnnotation(ResponseBody.class);
-		if (responseBody != null) {
-			isJson = true;
+		if (handler instanceof HandlerMethod) {
+			HandlerMethod method = (HandlerMethod)handler;
+			ResponseBody responseBody = method.getMethodAnnotation(ResponseBody.class);
+			if (responseBody != null) {
+				isJson = true;
+			}
 		}
 
 		// error result

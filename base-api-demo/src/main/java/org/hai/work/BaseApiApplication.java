@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 基础功能远程提供方
+ *
  * @author mr.ahai
  */
 @EnableDubbo
