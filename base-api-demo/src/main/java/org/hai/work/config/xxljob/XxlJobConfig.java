@@ -1,8 +1,6 @@
-package org.hai.work.config;
+package org.hai.work.config.xxljob;
 
-import com.xxl.job.core.executor.XxlJobExecutor;
 import com.xxl.job.core.executor.impl.XxlJobSpringExecutor;
-import org.hai.work.application.job.MyJob;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -16,31 +14,11 @@ public class XxlJobConfig {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-//    @Value("http://localhost:9080/xxl-job-admin")
-//    private String adminAddresses;
-//
-//    @Value("")
-//    private String accessToken;
-//
-//    @Value("god")
-//    private String appname;
-//
-//    @Value("${xxl.job.executor.address}")
-//    private String address;
-//
-//    @Value("${xxl.job.executor.ip}")
-//    private String ip;
-//
-//    @Value("${xxl.job.executor.port}")
-//    private int port;
-//
-//    @Value("${xxl.job.executor.logpath}")
-//    private String logPath;
-//
-//    @Value("${xxl.job.executor.logretentiondays}")
-//    private int logRetentionDays;
 
-
+    /**
+     * 方便测试，后续开发采取配置文件注入的方式
+     * @return xxlSpring执行器
+     */
     @Bean
     public XxlJobSpringExecutor xxlJobExecutor() {
         logger.info(">>>>>>>>>>> xxl-job config init.");
@@ -50,16 +28,9 @@ public class XxlJobConfig {
         xxlJobSpringExecutor.setAddress("");
         xxlJobSpringExecutor.setIp("127.0.0.1");
         xxlJobSpringExecutor.setPort(4545);
-        //xxlJobSpringExecutor.setAccessToken(accessToken);
+        xxlJobSpringExecutor.setAccessToken("default_token");
         xxlJobSpringExecutor.setLogPath("xxl-job-base-api-demo.log");
         //xxlJobSpringExecutor.setLogRetentionDays(logRetentionDays);
-
-        // Bean方法模式
-        // 通过扫描@XxlJob方式注册
-
-        // 注册Bean类模式
-        XxlJobExecutor.registJobHandler("beanClassDemoJobHandler", new MyJob());
-
         return xxlJobSpringExecutor;
     }
 
