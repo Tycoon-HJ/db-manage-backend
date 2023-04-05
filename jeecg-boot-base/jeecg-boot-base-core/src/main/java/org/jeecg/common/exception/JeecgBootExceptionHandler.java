@@ -1,6 +1,6 @@
 package org.jeecg.common.exception;
 
-import io.lettuce.core.RedisConnectionException;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.jeecg.common.api.vo.Result;
@@ -9,13 +9,12 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.data.redis.connection.PoolException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.servlet.NoHandlerFoundException;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * 异常处理器
@@ -115,4 +114,21 @@ public class JeecgBootExceptionHandler {
         return Result.error("Redis 连接异常!");
     }
 
+
+	/**
+	 *
+	 * 对异常进行统一处理
+	 * 对【org.hibernate.validator.constraints.length】@Length该注解进行异常捕获
+	 *
+	 * @param e
+	 * @return
+	 */
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public Result<?> validation(MethodArgumentNotValidException e) {
+		log.error(e.getMessage());
+		String[] msgs = e.getMessage().split("default message");
+		String msg = msgs[msgs.length - 1];
+		String substring = msg.substring(0, msg.length() - 2);
+		return Result.error(substring);
+	}
 }

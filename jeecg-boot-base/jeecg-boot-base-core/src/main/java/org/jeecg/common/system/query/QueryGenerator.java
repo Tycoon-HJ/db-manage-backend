@@ -1,17 +1,9 @@
 package org.jeecg.common.system.query;
 
-import java.beans.PropertyDescriptor;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Field;
-import java.math.BigDecimal;
-import java.net.URLDecoder;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-
+import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.jeecg.common.constant.CommonConstant;
 import org.jeecg.common.constant.DataBaseConstant;
@@ -24,12 +16,17 @@ import org.jeecg.common.util.SqlInjectionUtil;
 import org.jeecg.common.util.oConvertUtils;
 import org.springframework.util.NumberUtils;
 
-import com.alibaba.fastjson.JSON;
-import com.baomidou.mybatisplus.annotation.DbType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-
-import lombok.extern.slf4j.Slf4j;
+import java.beans.PropertyDescriptor;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Field;
+import java.math.BigDecimal;
+import java.net.URLDecoder;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @Slf4j
 public class QueryGenerator {
@@ -267,10 +264,10 @@ public class QueryGenerator {
             try {
                 superQueryParams = URLDecoder.decode(superQueryParams, "UTF-8");
                 List<QueryCondition> conditions = JSON.parseArray(superQueryParams, QueryCondition.class);
-                if (conditions == null || conditions.size() == 0) {
+                if (conditions == null || conditions.isEmpty()) {
                     return;
                 }
-                log.info("---高级查询参数-->" + conditions.toString());
+                log.info("---高级查询参数-->" + conditions);
                 queryWrapper.and(andWrapper -> {
                     for (int i = 0; i < conditions.size(); i++) {
                         QueryCondition rule = conditions.get(i);
@@ -278,7 +275,7 @@ public class QueryGenerator {
                                 && oConvertUtils.isNotEmpty(rule.getRule())
                                 && oConvertUtils.isNotEmpty(rule.getVal())) {
 
-                            log.debug("SuperQuery ==> " + rule.toString());
+                            log.debug("SuperQuery ==> " + rule);
 
                             //update-begin-author:taoyan date:20201228 for: 【高级查询】 oracle 日期等于查询报错
 							Object queryValue = rule.getVal();
@@ -363,7 +360,7 @@ public class QueryGenerator {
 		//update-begin--Author:scott  Date:20190724 for：initQueryWrapper组装sql查询条件错误 #284-------------------
 		//TODO 此处规则，只适用于 le lt ge gt
 		// step 2 .>= =<
-		if (rule == null && val.length() >= 3) {
+		if (val.length() >= 3) {
 			if(QUERY_SEPARATE_KEYWORD.equals(val.substring(2, 3))){
 				rule = QueryRuleEnum.getByValue(val.substring(0, 2));
 			}
@@ -459,7 +456,7 @@ public class QueryGenerator {
 		if(oConvertUtils.isNotEmpty(value)) {
 			Object temp;
 			// 针对数字类型字段，多值查询
-			if(value.indexOf(COMMA)!=-1){
+			if(value.contains(COMMA)){
 				temp = value;
 				addEasyQuery(queryWrapper, name, rule, temp);
 				return;
@@ -601,7 +598,7 @@ public class QueryGenerator {
 	public static Map<String, SysPermissionDataRuleModel> getRuleMap() {
 		Map<String, SysPermissionDataRuleModel> ruleMap = new HashMap<String, SysPermissionDataRuleModel>();
 		List<SysPermissionDataRuleModel> list =JeecgDataAutorUtils.loadDataSearchConditon();
-		if(list != null&&list.size()>0){
+		if(list != null&&!list.isEmpty()){
 			if(list.get(0)==null){
 				return ruleMap;
 			}
@@ -618,7 +615,7 @@ public class QueryGenerator {
 	
 	private static void addRuleToQueryWrapper(SysPermissionDataRuleModel dataRule, String name, Class propertyType, QueryWrapper<?> queryWrapper) {
 		QueryRuleEnum rule = QueryRuleEnum.getByValue(dataRule.getRuleConditions());
-		if(rule.equals(QueryRuleEnum.IN) && ! propertyType.equals(String.class)) {
+		if(Objects.equals(rule, QueryRuleEnum.IN) && ! propertyType.equals(String.class)) {
 			String[] values = dataRule.getRuleValue().split(",");
 			Object[] objs = new Object[values.length];
 			for (int i = 0; i < values.length; i++) {

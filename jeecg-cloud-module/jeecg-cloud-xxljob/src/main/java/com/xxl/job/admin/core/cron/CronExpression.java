@@ -19,16 +19,7 @@ package com.xxl.job.admin.core.cron;
 
 import java.io.Serializable;
 import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TimeZone;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Provides a parser and evaluator for unix-like cron expressions. Cron 
@@ -265,7 +256,7 @@ public final class CronExpression implements Serializable, Cloneable {
      * 
      * @param cronExpression String representation of the cron expression the
      *                       new object should represent
-     * @throws java.text.ParseException
+     * @throws ParseException
      *         if the string expression cannot be parsed into a valid 
      *         <CODE>CronExpression</CODE>
      */
@@ -1280,7 +1271,7 @@ public final class CronExpression implements Serializable, Cloneable {
                         day = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
                         day -= lastdayOffset;
                         
-                        java.util.Calendar tcal = java.util.Calendar.getInstance(getTimeZone());
+                        Calendar tcal = Calendar.getInstance(getTimeZone());
                         tcal.set(Calendar.SECOND, 0);
                         tcal.set(Calendar.MINUTE, 0);
                         tcal.set(Calendar.HOUR_OF_DAY, 0);
@@ -1316,7 +1307,7 @@ public final class CronExpression implements Serializable, Cloneable {
                     t = day;
                     day = daysOfMonth.first();
 
-                    java.util.Calendar tcal = java.util.Calendar.getInstance(getTimeZone());
+                    Calendar tcal = Calendar.getInstance(getTimeZone());
                     tcal.set(Calendar.SECOND, 0);
                     tcal.set(Calendar.MINUTE, 0);
                     tcal.set(Calendar.HOUR_OF_DAY, 0);
@@ -1580,9 +1571,9 @@ public final class CronExpression implements Serializable, Cloneable {
      * @param hour the hour to set
      */
     protected void setCalendarHour(Calendar cal, int hour) {
-        cal.set(java.util.Calendar.HOUR_OF_DAY, hour);
-        if (cal.get(java.util.Calendar.HOUR_OF_DAY) != hour && hour != 24) {
-            cal.set(java.util.Calendar.HOUR_OF_DAY, hour + 1);
+        cal.set(Calendar.HOUR_OF_DAY, hour);
+        if (cal.get(Calendar.HOUR_OF_DAY) != hour && hour != 24) {
+            cal.set(Calendar.HOUR_OF_DAY, hour + 1);
         }
     }
 
