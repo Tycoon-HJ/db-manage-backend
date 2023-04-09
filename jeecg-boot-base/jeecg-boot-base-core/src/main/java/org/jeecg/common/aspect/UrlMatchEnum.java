@@ -46,13 +46,4 @@ public enum UrlMatchEnum {
         }
         return null;
     }
-
-
-//    public static void main(String[] args) {
-//        /**
-//         * 比如request真实请求URL: /online/cgform/api/getData/81fcf7d8922d45069b0d5ba983612d3a
-//         * 转换匹配路由URL后（对应配置的菜单路径）:/online/cgformList/81fcf7d8922d45069b0d5ba983612d3a
-//         */
-//        System.out.println(UrlMatchEnum.getMatchResultByUrl("/online/cgform/api/getData/81fcf7d8922d45069b0d5ba983612d3a"));
-//    }
 }

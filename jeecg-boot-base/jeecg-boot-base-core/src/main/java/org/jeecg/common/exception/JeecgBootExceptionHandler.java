@@ -131,4 +131,9 @@ public class JeecgBootExceptionHandler {
 		String substring = msg.substring(0, msg.length() - 2);
 		return Result.error(substring);
 	}
+	@ExceptionHandler(DictException.class)
+	public Result<?> validationDict(DictException e) {
+		log.error(e.getMessage());
+		return Result.error(e.getMessage());
+	}
 }

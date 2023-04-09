@@ -11,6 +11,8 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import org.hibernate.validator.constraints.Length;
 import org.jeecg.common.aspect.annotation.Dict;
+import org.jeecg.modules.aspect.CO00001;
+import org.jeecg.modules.aspect.Idict;
 import org.jeecgframework.poi.excel.annotation.Excel;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -60,7 +62,8 @@ public class TbFieldManager implements Serializable {
     private String fieldName;
 	/**字段是否是字典*/
 	@Excel(name = "字段是否是字典", width = 15, dicCode = "is_dict")
-	@Dict(dicCode = "is_dict")
+    @Idict(code = CO00001.class)
+    @Dict(dicCode = "is_dict")
     @ApiModelProperty(value = "字段是否是字典")
     private String fieldIsDictFlag;
 	/**字段中文名*/
