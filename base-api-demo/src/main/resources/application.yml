@@ -15,4 +15,12 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: yhjaicly
+  redis:
+    host: localhost
+    port: 6379
 
+    # 设置文件上传大小
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB

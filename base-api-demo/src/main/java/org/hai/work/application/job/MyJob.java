@@ -22,10 +22,10 @@ public class MyJob {
 
     @XxlJob("writeSomeMsg")
     public void writeMsg() {
-        threadPoolExecutor.execute(()->{
+        threadPoolExecutor.execute(() -> {
             logger.info("执行成功了！！！");
             try {
-                Thread.sleep(3*1000);
+                Thread.sleep(3 * 1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

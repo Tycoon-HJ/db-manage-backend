@@ -14,7 +14,7 @@ public class BaseApiTest {
     }
 
     @Test
-    void testBaseDo01(){
+    void testBaseDo01() {
         BaseApiDO baseApiDO = new BaseApiDO();
         baseApiDO.setKey("1");
         BaseApiDO baseApiDO1 = new BaseApiDO();

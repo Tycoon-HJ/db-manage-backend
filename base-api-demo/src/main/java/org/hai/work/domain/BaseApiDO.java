@@ -8,6 +8,7 @@ import org.springframework.beans.BeanUtils;
 public class BaseApiDO {
 
     private String key;
+
     public void checkJavaCoCo() {
         BaseApiDO baseApiDO = new BaseApiDO();
         baseApiDO.setKey("1");
