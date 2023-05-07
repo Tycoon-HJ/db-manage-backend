@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.DubboReference;
+import org.hai.work.service.BaseApiService;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.aspect.annotation.AutoLog;
 import org.jeecg.common.system.base.controller.JeecgController;
@@ -34,6 +36,9 @@ public class TbFieldManagerController extends JeecgController<TbFieldManager, IT
 	 @Autowired
 	 private ITbFieldManagerService tbFieldManagerService;
 
+	 @DubboReference
+	 private BaseApiService baseApiService;
+
 	 /**
 	  * 分页列表查询
 	  *
@@ -52,6 +57,8 @@ public class TbFieldManagerController extends JeecgController<TbFieldManager, IT
 									HttpServletRequest req) {
 		 QueryWrapper<TbFieldManager> queryWrapper = QueryGenerator.initQueryWrapper(tbFieldManager, req.getParameterMap());
 		 Page<TbFieldManager> page = new Page<>(pageNo, pageSize);
+		 log.info("-----------------------");
+		 log.info(baseApiService.testMsg());
 		 return Result.OK(tbFieldManagerService.page(page, queryWrapper));
 	 }
 

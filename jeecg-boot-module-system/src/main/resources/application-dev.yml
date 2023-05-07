@@ -324,10 +324,14 @@ dubbo:
   application:
     name: db-manage
   registry:
-    address: zookeeper://127.0.0.1:2181
+    address: nacos://127.0.0.1:8848
   protocol:
     name: dubbo
-    port: 20880
+    port: -1
     # 关闭启动检查
   consumer:
     check: false
+nacos:
+  discovery:
+    auto-register: true
+    server-addr: 127.0.0.1:8848

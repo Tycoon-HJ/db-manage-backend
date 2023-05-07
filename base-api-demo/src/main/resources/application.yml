@@ -4,12 +4,14 @@ dubbo:
   application:
     name: base-api
   registry:
-    address: zookeeper://localhost:2181
+    address: nacos://localhost:8848
+    register-mode: instance # 应用级注册
   protocol:
     name: dubbo
-    port: 20800
-
+    port: -1
 spring:
+  application:
+    name: haijun-yin
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/jeecg-boot?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.jdbc.Driver
@@ -27,6 +29,10 @@ spring:
 
 # 配置中心
 nacos:
+  discovery:
+    auto-register: true
+    server-addr: 127.0.0.1:8848
+
   config:
     server-addr: 127.0.0.1:8848
     data-id: hai
