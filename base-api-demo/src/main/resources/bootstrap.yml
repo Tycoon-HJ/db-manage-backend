@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: haijun-yin
+  cloud:
+    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848    #配置中心地址
+        file-extension: yaml         #配置文件格式，默认properties
+        namespace: 6716853c-652a-43e0-abd3-13628b4fd5f9 #命名空间
+        group: DEFAULT_GROUP                      #项目
+        extension-configs:
+          - data-id: haijun.yaml
+            group: DEFAULT_GROUP     # 默认为DEFAULT_GROUP
+            refresh: true            # 是否动态刷新，默认为false

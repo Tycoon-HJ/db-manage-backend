@@ -30,12 +30,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
-        <!-- 限流Redis实现 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
-        </dependency>
         <!--springboot2.X默认使用lettuce连接池，需要引入commons-pool2-->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -62,6 +56,28 @@
             <artifactId>base-api-demo</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>nacos-api</artifactId>
+                    <groupId>com.alibaba.nacos</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>nacos-client</artifactId>
+                    <groupId>com.alibaba.nacos</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>nacos-common</artifactId>
+                    <groupId>com.alibaba.nacos</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>nacos-spring-context</artifactId>
+                    <groupId>com.alibaba.nacos</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                    <groupId>com.alibaba.cloud</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
     <build>
