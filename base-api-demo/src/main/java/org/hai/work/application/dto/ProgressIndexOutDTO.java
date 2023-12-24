@@ -8,4 +8,6 @@ import lombok.Data;
 @Data
 public class ProgressIndexOutDTO {
     private Integer index;
+
+    private boolean flag;
 }
