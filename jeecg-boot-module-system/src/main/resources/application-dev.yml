@@ -336,3 +336,7 @@ dubbo:
     # 关闭启动检查
   consumer:
     check: false
+netty:
+  address: 127.0.0.1
+  port: 5678
+  path: /chat
