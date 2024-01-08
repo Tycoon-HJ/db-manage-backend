@@ -47,8 +47,8 @@
 		<justauth-spring-boot-starter.version>1.3.4</justauth-spring-boot-starter.version>
 		<dom4j.version>1.6.1</dom4j.version>
 		<qiniu-java-sdk.version>7.4.0</qiniu-java-sdk.version>
-		<dubbo-boot.version>3.0.13</dubbo-boot.version>
-		<zkclient.version>4.2.0</zkclient.version>
+		<dubbo-boot.version>3.2.0</dubbo-boot.version>
+<!--		<zkclient.version>4.2.0</zkclient.version>-->
 	</properties>
 
 	<modules>
@@ -56,6 +56,7 @@
         <module>jeecg-boot-module-demo</module>
         <module>jeecg-boot-module-system</module>
 		<module>database-management</module>
+		<module>base-api-demo</module>
         <!--需要微服务，请打开
         <module>jeecg-boot-starter</module>
         <module>jeecg-cloud-module</module>-->
@@ -104,6 +105,12 @@
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -119,18 +126,22 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
+<!--不使用zookeeper-->
+<!--			&lt;!&ndash; zookeeper客户端  只需引入此依赖curator-framework curator-recipes 都有 &ndash;&gt;-->
+<!--			<dependency>-->
+<!--				<groupId>org.apache.curator</groupId>-->
+<!--				<artifactId>curator-x-discovery</artifactId>-->
+<!--				<version>${zkclient.version}</version>-->
+<!--			</dependency>-->
 
-			<!-- zookeeper客户端  只需引入此依赖curator-framework curator-recipes 都有 -->
+<!--			使用nacos作为配置中心和服务注册中心-->
+			<!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-registry-nacos -->
 			<dependency>
-				<groupId>org.apache.curator</groupId>
-				<artifactId>curator-x-discovery</artifactId>
-				<version>${zkclient.version}</version>
+				<groupId>org.apache.dubbo</groupId>
+				<artifactId>dubbo-registry-nacos</artifactId>
+				<version>${dubbo-boot.version}</version>
 			</dependency>
-			<!-- Lombok -->
-			<dependency>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok</artifactId>
-			</dependency>
+
 			<!-- spring-cloud-->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
@@ -379,15 +390,15 @@
                 <!--当前环境-->
                 <profile.name>dev</profile.name>
                 <!--配置文件前缀-->
-                <prefix.name>jeecg</prefix.name>
-                <!--Nacos配置中心地址-->
-                <config.server-addr>127.0.0.1:8848</config.server-addr>
-                <!--Nacos配置中心命名空间,用于支持多环境.这里必须使用ID，不能使用名称,默认为空-->
-                <config.namespace></config.namespace>
-                <!--Nacos配置分组名称-->
-                <config.group>DEFAULT_GROUP</config.group>
-                <!--Nacos服务发现地址-->
-                <discovery.server-addr>127.0.0.1:8848</discovery.server-addr>
+<!--                <prefix.name>jeecg</prefix.name>-->
+<!--                &lt;!&ndash;Nacos配置中心地址&ndash;&gt;-->
+<!--                <config.server-addr>127.0.0.1:8848</config.server-addr>-->
+<!--                &lt;!&ndash;Nacos配置中心命名空间,用于支持多环境.这里必须使用ID，不能使用名称,默认为空&ndash;&gt;-->
+<!--                <config.namespace></config.namespace>-->
+<!--                &lt;!&ndash;Nacos配置分组名称&ndash;&gt;-->
+<!--                <config.group>DEFAULT_GROUP</config.group>-->
+<!--                &lt;!&ndash;Nacos服务发现地址&ndash;&gt;-->
+<!--                <discovery.server-addr>127.0.0.1:8848</discovery.server-addr>-->
             </properties>
         </profile>
         <!-- 测试 -->

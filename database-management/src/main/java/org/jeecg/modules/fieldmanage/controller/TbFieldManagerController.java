@@ -1,7 +1,6 @@
 package org.jeecg.modules.fieldmanage.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -57,10 +56,10 @@ public class TbFieldManagerController extends JeecgController<TbFieldManager, IT
 									@RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
 									HttpServletRequest req) {
 		 QueryWrapper<TbFieldManager> queryWrapper = QueryGenerator.initQueryWrapper(tbFieldManager, req.getParameterMap());
-		 Page<TbFieldManager> page = new Page<TbFieldManager>(pageNo, pageSize);
-		 IPage<TbFieldManager> pageList = tbFieldManagerService.page(page, queryWrapper);
-		 System.out.println(baseApiService.testMsg());
-		 return Result.OK(pageList);
+		 Page<TbFieldManager> page = new Page<>(pageNo, pageSize);
+		 log.info("-----------------------");
+		 log.info(baseApiService.testMsg());
+		 return Result.OK(tbFieldManagerService.page(page, queryWrapper));
 	 }
 
 	 /**

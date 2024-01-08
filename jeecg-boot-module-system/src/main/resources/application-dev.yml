@@ -154,6 +154,10 @@ spring:
       shutdown-timeout: 100ms
     password: ''
     port: 6379
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
 #mybatis plus 设置
 mybatis-plus:
   mapper-locations: classpath*:org/jeecg/modules/**/xml/*Mapper.xml
@@ -323,11 +327,16 @@ third-app:
 dubbo:
   application:
     name: db-manage
+    qos-port: 16789
   registry:
-    address: zookeeper://127.0.0.1:2181
+    address: nacos://127.0.0.1:8848
   protocol:
     name: dubbo
-    port: 20880
+    port: -1
     # 关闭启动检查
   consumer:
     check: false
+netty:
+  address: 127.0.0.1
+  port: 5678
+  path: /chat

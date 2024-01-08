@@ -4,12 +4,13 @@ import com.xxl.job.core.executor.impl.XxlJobSpringExecutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
+ * 开启xxl-job时，放开Configuration
+ *
  * @author mr.ahai
  */
-@Configuration
+//@Configuration
 public class XxlJobConfig {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -17,6 +18,7 @@ public class XxlJobConfig {
 
     /**
      * 方便测试，后续开发采取配置文件注入的方式
+     *
      * @return xxlSpring执行器
      */
     @Bean
