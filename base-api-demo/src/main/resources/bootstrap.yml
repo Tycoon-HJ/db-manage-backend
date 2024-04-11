@@ -3,8 +3,8 @@ spring:
     name: haijun-yin
   cloud:
     nacos:
-#      discovery:
-#        server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
       config:
         server-addr: 127.0.0.1:8848    #配置中心地址
         file-extension: yaml         #配置文件格式，默认properties

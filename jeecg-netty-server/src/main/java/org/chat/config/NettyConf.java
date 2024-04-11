@@ -1,7 +1,7 @@
-package org.jeecg.modules.chat.config;
+package org.chat.config;
 
-import org.jeecg.modules.chat.dao.NettyConfigDAO;
-import org.jeecg.modules.chat.service.WebSocketNettyServer;
+import org.chat.dao.NettyConfigDAO;
+import org.chat.service.WebSocketNettyServer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,6 +20,6 @@ public class NettyConf implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        //executorService.execute(() -> webSocketNettyServer.start(nettyConfigDAO.getPort()));
+        executorService.execute(() -> webSocketNettyServer.start(nettyConfigDAO.getPort()));
     }
 }
